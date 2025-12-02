@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="assets/styles/signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="signup-container">
+
+    <!-- COLUMNA IZQUIERDA -->
+    <div class="signup-left">
+      <div class="signup-left-text">
+            <img src="assets/images/Logo.png" class="mini-logo" alt="">
+            <h1>Únete a UXSiembra</h1>
+            <p>Optimiza tu agricultura con análisis inteligentes, alertas en tiempo real y tecnología accesible desde tu celular.</p>
+        </div>
+
+        <img src="assets/images/signup.jpg" alt="Farmer">
+    </div>
+
+    <!-- COLUMNA DERECHA -->
+    <div class="signup-right">
+
+        <h2>Regístrate</h2>
+
+        <form class="signupForm">
+
+            <label>Nombre completo</label>
+            <input type="text" placeholder="Tu nombre" required>
+
+            <label>Tipo de documento</label>
+            <select>
+                <option value="">-- Selecciona --</option>
+                <option>DNI</option>
+                <option>C.E.</option>
+                <option>Pasaporte</option>
+            </select>
+
+            <label>Número de documento</label>
+            <input type="text" required>
+
+            <label>Teléfono</label>
+            <input type="text" placeholder="+51 9xxxxxxx" required>
+
+            <label>Correo electrónico</label>
+            <input type="email" required>
+
+            <div class="row">
+                <div>
+                    <label>Contraseña</label>
+                    <input type="password" required>
+                </div>
+                <div>
+                    <label>Confirmar contraseña</label>
+                    <input type="password" required>
+                </div>
+            </div>
+
+            <button class="btn-register" type="submit">Registrar</button>
+
+            <p class="login-link">
+                ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+            </p>
+
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>

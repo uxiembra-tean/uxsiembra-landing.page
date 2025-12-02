@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajustes - UXiembra</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/ajustes.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/Logo.PNG" class="brand-logo">
+            <span>UXSiembra</span>
+        </div>
+
+        <nav class="menu">
+            <a href="menu.html">Inicio</a>
+            <a href="alerta.html">Alertas</a>
+            <a href="riego.html">Riego</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="ajustes.html" class="active">Ajustes</a>
+        </nav>
+
+    <div class="help-card">
+        <h4>Centro de ayuda</h4>
+        <p>¿Problemas con la app? Contáctanos.</p>
+        <button id="helpBtn">Ir al Centro</button>
+      </div>
+    </aside>
+
+<!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cultivo, alerta o parcela...">
+        </div>
+        <div class="top-actions">
+          <button id="btnSimulateAlert" title="Simular alerta">🔔 Simular alerta</button>
+          <div class="avatar">UX</div>
+        </div>
+      </header>
+
+      <main class="main">
+
+        <header class="topbar">
+            <h2>⚙️ Ajustes del sistema</h2>
+        </header>
+
+        <section class="ajustes-section">
+
+            <!-- PREFERENCIAS DE ALERTAS CLIMÁTICAS -->
+            <div class="card">
+                <h3>🌥️ Preferencias de alertas climáticas</h3>
+                
+                <label><input type="checkbox" id="alertaHeladas"> Heladas</label>
+                <label><input type="checkbox" id="alertaLluvias"> Lluvias intensas</label>
+                <label><input type="checkbox" id="alertaCalor"> Calor extremo</label>
+                <label><input type="checkbox" id="alertaViento"> Vientos fuertes</label>
+            </div>
+
+            <!-- SUGERENCIAS POR CULTIVO -->
+            <div class="card">
+                <h3>🌱 Sugerencias inteligentes</h3>
+                <label><input type="checkbox" id="sugerenciasCultivo"> Activar sugerencias según cultivo</label>
+            </div>
+
+            <!-- NOTIFICACIONES DE CHAT -->
+            <div class="card">
+                <h3>💬 Notificaciones de asesoría</h3>
+                <label><input type="checkbox" id="notifChat"> Notificar cuando un asesor responda</label>
+            </div>
+
+            <!-- TEMA Y PERFIL -->
+            <div class="card">
+                <h3>🎨 Apariencia del sistema</h3>
+                <label for="temaSelect">Tema:</label>
+                <select id="temaSelect">
+                    <option value="claro">Claro</option>
+                    <option value="oscuro">Oscuro</option>
+                </select>
+            </div>
+
+            <!-- BOTÓN GUARDAR -->
+            <button id="btnGuardarAjustes" class="btn-guardar">Guardar cambios</button>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <small>© 2025 UXiembra</small>
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="assets/scripts/ajustes.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+body {
+    background: #f1f6f1;
+}
+.signup-container {
+    width: 95%;
+    max-width: 1300px;
+    margin: 40px auto;
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+/* ----------------------- */
+/* COLUMNA IZQUIERDA */
+/* ----------------------- */
+
+.signup-left {
+    width: 50%;
+    position: relative;
+}
+
+.signup-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.signup-left-text {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    max-width: 70%;
+}
+
+.signup-left-text .mini-logo {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+.signup-left-text h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+.signup-left-text p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* ----------------------- */
+/* COLUMNA DERECHA */
+/* ----------------------- */
+
+.signup-right {
+    width: 50%;
+    padding: 40px 50px;
+}
+
+.signup-right h2 {
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* FORMULARIO */
+.signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.signupForm input,
+.signupForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cddfcf;
+    border-radius: 8px;
+    font-size: 0.95rem;
+}
+
+.signupForm select {
+    background: white;
+}
+
+/* DOS INPUTS EN UNA FILA */
+.row {
+    display: flex;
+    gap: 15px;
+}
+
+.row div {
+    width: 100%;
+}
+
+/* BOTÓN */
+.btn-register {
+    background: linear-gradient(90deg, #2d9f43, #1e7d34);
+    border: none;
+    color: white;
+    padding: 14px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn-register:hover {
+    opacity: 0.85;
+}
+
+/* TEXTO INFERIOR */
+.login-link {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #1e7d34;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+/* ================================================================= */
+/* ========================   RESPONSIVE   ========================== */
+/* ================================================================= */
+
+/* Tablets (≤ 992px) */
+@media (max-width: 992px) {
+
+    .signup-container {
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .signup-left {
+        width: 100%;
+        height: 280px;
+    }
+
+    .signup-left img {
+        height: 100%;
+    }
+
+    .signup-left-text {
+        bottom: 25px;
+        left: 25px;
+        max-width: 85%;
+    }
+
+    .signup-left-text h1 {
+        font-size: 1.8rem;
+    }
+
+    .signup-right {
+        width: 100%;
+        padding: 35px 30px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Celulares (≤ 600px) */
+@media (max-width: 600px) {
+    
+    .signup-container {
+        border-radius: 0;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .signup-left {
+        height: 230px;
+    }
+
+    .signup-left-text {
+        bottom: 20px;
+        left: 20px;
+    }
+
+    .signup-left-text .mini-logo {
+        width: 65px;
+    }
+
+    .signup-left-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .signup-left-text p {
+        font-size: 0.9rem;
+    }
+
+    .signup-right {
+        padding: 25px 20px;
+    }
+
+    .signup-right h2 {
+        font-size: 1.5rem;
+    }
+
+    .btn-register {
+        padding: 12px;
+        font-size: 0.95rem;
+    }
+}

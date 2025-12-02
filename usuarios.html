@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/usuarios.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/Logo.PNG" class="brand-logo">
+            <span>UXSiembra</span>
+        </div>
+
+        <nav class="menu">
+            <a href="menu.html">Inicio</a>
+            <a href="alerta.html">Alertas</a>
+            <a href="riego.html">Riego</a>
+            <a href="reportes.html">Reportes</a>
+            <a class="active" href="usuarios.html">Usuarios</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="ajustes.html">Ajustes</a>
+        </nav>
+        <div class="help-card">
+        <h4>Centro de ayuda</h4>
+        <p>¿Problemas con la app? Contáctanos.</p>
+        <button id="helpBtn">Ir al Centro</button>
+      </div>
+    </aside>
+
+<!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cultivo, alerta o parcela...">
+        </div>
+        <div class="top-actions">
+          <button id="btnSimulateAlert" title="Simular alerta">🔔 Simular alerta</button>
+          <div class="avatar">UX</div>
+        </div>
+      </header>
+
+    <!-- MAIN -->
+    <main class="main">
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <h2>👥 Gestión de Usuarios</h2>
+
+            <button id="btnAgregar" class="btn-primary">+ Añadir usuario</button>
+        </header>
+
+        <!-- CONTENIDO -->
+        <section class="usuarios-section">
+
+            <!-- CARD: Lista de usuarios -->
+            <div class="card">
+                <h3>Usuarios registrados</h3>
+
+                <table class="tabla-usuarios">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Rol</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="listaUsuarios"></tbody>
+                </table>
+            </div>
+
+             <!-- CARD: Agricultores -->
+         <div class="card">
+            <h3>👨‍🌾 Agricultores</h3>
+
+    <!-- FILTROS -->
+    <div class="filtros-agricultores">
+        <select id="filtroZona">
+            <option value="">Todas las zonas</option>
+            <option value="Norte">Norte</option>
+            <option value="Sur">Sur</option>
+            <option value="Centro">Centro</option>
+        </select>
+
+        <select id="filtroCultivo">
+            <option value="">Todos los cultivos</option>
+            <option value="Maíz">Maíz</option>
+            <option value="Papa">Papa</option>
+            <option value="Quinua">Quinua</option>
+            <option value="Zanahoria">Zanahoria</option>
+            <option value="Papaya">Papaya</option>
+            <option value="Arroz">Arroz</option>
+        </select>
+
+        <select id="filtroRiesgo">
+            <option value="">Todos los niveles</option>
+            <option value="bajo">Riesgo bajo</option>
+            <option value="medio">Riesgo medio</option>
+            <option value="alto">Riesgo alto</option>
+        </select>
+    </div>
+
+    <!-- TABLA AGRICULTORES -->
+    <table class="tabla-usuarios">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Zona</th>
+                <th>Cultivo</th>
+                <th>Riesgo</th>
+            </tr>
+        </thead>
+
+        <tbody id="listaAgricultores"></tbody>
+    </table>
+
+    <p id="actualizacionTexto" style="font-size:12px; margin-top:10px; color:#3f764b;">
+        Actualizando datos automáticamente...
+    </p>
+</div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <small>© 2025 UXiembra</small>
+        </footer>
+
+    </main>
+</div>
+
+<!-- MODAL -->
+<div id="modal" class="modal hidden">
+    <div class="modal-content">
+        <h3 id="modalTitulo">Añadir usuario</h3>
+
+        <input id="inputNombre" type="text" placeholder="Nombre del usuario">
+
+        <select id="inputRol">
+            <option value="lector">Lector</option>
+            <option value="editor">Editor</option>
+            <option value="admin">Administrador</option>
+        </select>
+
+        <div class="modal-buttons">
+            <button id="btnGuardar" class="btn-primary">Guardar</button>
+            <button id="btnCancelar" class="btn-secondary">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<script src="assets/scripts/usuarios.js"></script>
+</body>
+</html>

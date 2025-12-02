@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="assets/styles/login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="login-container">
+
+    <!-- SECCIÓN IZQUIERDA (branding) -->
+    <div class="login-left">
+        <img src="assets/images/Logo.PNG" class="login-logo" alt="UXSiembra Logo">
+        <h1>¡Bienvenido de vuelta!</h1>
+        <p>
+            Optimiza tu agricultura con análisis inteligentes, alertas en tiempo real 
+            y tecnología accesible desde tu celular.
+        </p>
+
+        <div class="bg-shapes"></div>
+    </div>
+
+    <!-- SECCIÓN DERECHA (formulario) -->
+    <div id="loginForm" class="login-right">
+        <h2>Inicia Sesión</h2>
+
+        <form class="loginForm">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" placeholder="" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" placeholder="" required>
+
+            <div class="options">
+                <label class="remember">
+                    <input type="checkbox" id="remember" />
+                    <span>Recordarme</span>
+                </label>
+                <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+            </div>
+            
+            <div id="mensaje" class="mensaje"></div>
+
+            <button type="submit"  class="btn-login">Ingresar</button>
+
+
+            <p class="register-text">
+                ¿No tienes una cuenta? <a href="signup.html">Regístrate aquí</a>
+            </p>
+        </form>
+
+        <div class="social">
+            <p>Síguenos</p>
+            <div class="social-icons">
+                <a href="#"><img src="assets/images/facebook.png" alt=""></a>
+                <a href="#"><img src="assets/images/twitter.png" alt=""></a>
+                <a href="#"><img src="assets/images/instagram.png" alt=""></a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="assets/scripts/login.js"></script>
+</body>
+</html>

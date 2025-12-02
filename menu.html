@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Menu</title>
+  <!-- Fuentes -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/styles/menu.css">
+
+  <!-- Chart.js para gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <!-- Usa tu logo aquí -->
+        <img src="assets/images/Logo.PNG" alt="UXiembra logo" class="brand-logo">
+        <span>UXSiembra</span>
+      </div>
+
+      <nav class="menu">
+        <a class="active" href="menu.html">Inicio</a>
+        <a href="alerta.html">Alertas</a>
+        <a href="riego.html">Riego</a>
+        <a href="reportes.html">Reportes</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a href="comunidad.html">Comunidad</a>
+        <a href="ajustes.html">Ajustes</a>
+      </nav>
+
+      <div class="help-card">
+        <h4>Centro de ayuda</h4>
+        <p>¿Problemas con la app? Contáctanos.</p>
+        <button id="helpBtn">Ir al Centro</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cultivo, alerta o parcela...">
+        </div>
+        <div class="top-actions">
+          <button id="btnSimulateAlert" title="Simular alerta">🔔 Simular alerta</button>
+          <div class="avatar">UX</div>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <section class="content">
+        <!-- HERO / Cards -->
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Alertas recientes</h3>
+            <div id="alertsList" class="alerts-list">
+              <!-- alert items dinámicos -->
+            </div>
+            <div class="card-footer">
+              <button id="viewAllAlerts">Ver historial</button>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Estado de cultivos</h3>
+            <div class="status-grid">
+              <div class="status-item" id="status-humidity">
+                <div class="icon">💧</div>
+                <div>
+                  <strong>Humedad</strong>
+                  <div class="status-value" id="humidityValue">-- %</div>
+                </div>
+              </div>
+
+              <div class="status-item" id="status-pests">
+                <div class="icon">🐛</div>
+                <div>
+                  <strong>Plagas</strong>
+                  <div class="status-value" id="pestsValue">Sin riesgo</div>
+                </div>
+              </div>
+
+              <div class="status-item" id="status-temp">
+                <div class="icon">🌡️</div>
+                <div>
+                  <strong>Temperatura</strong>
+                  <div class="status-value" id="tempValue">-- °C</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Mi tarjeta de riego</h3>
+            <p id="irrigationRecommendation" class="recommendation">Cargando recomendación...</p>
+            <div class="card-actions">
+              <button id="applyIrrigation">Aplicado</button>
+              <span id="appliedStatus" class="applied-status">--</span>
+            </div>
+            <small class="muted">La recomendación se basa en humedad y clima.</small>
+          </div>
+        </div>
+
+        <!-- Gráficos y listas -->
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>Consumo de agua</h3>
+            <canvas id="waterChart" style="height:240px !important; max-height:240px;"></canvas>
+            <div class="chart-controls">
+              <label>Rango:
+                <select id="rangeSelect">
+                  <option value="7">Últimos 7 días</option>
+                  <option value="30" selected>Últimos 30 días</option>
+                  <option value="90">Últimos 90 días</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Actividad reciente</h3>
+            <ul id="activityList" class="activity-list">
+              <!-- items dinámicos -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Historial de alertas / modal simple -->
+        <div id="alertsModal" class="modal hidden">
+          <div class="modal-inner">
+            <h3>Historial de Alertas</h3>
+            <div id="alertsHistory" class="alerts-history"></div>
+            <div class="modal-actions">
+              <button id="closeAlertsModal">Cerrar</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <small>© 2025 UXiembra • Tu mejor aliado agricola</small>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Script -->
+  <script src="assets/scripts/menu.js"></script>
+</body>
+</html>

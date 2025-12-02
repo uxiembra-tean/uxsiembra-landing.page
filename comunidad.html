@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Comunidad - UXiembra</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles/comunidad.css">
+</head>
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <img src="assets/images/Logo.PNG" class="brand-logo" alt="UXiembra">
+        <span>UXSiembra</span>
+      </div>
+
+      <nav class="menu">
+        <a href="menu.html">Inicio</a>
+        <a href="alerta.html">Alertas</a>
+        <a href="riego.html">Riego</a>
+        <a href="reportes.html">Reportes</a>
+        <a href="usuarios.html">Usuarios</a>
+        <a class="active" href="comunidad.html">Comunidad</a>
+        <a href="ajustes.html">Ajustes</a>
+      </nav>
+
+      <div class="help-card">
+        <h4>Centro de ayuda</h4>
+        <p>¿Problemas con la app? Contáctanos.</p>
+        <button id="helpBtn">Ir al Centro</button>
+      </div>
+    </aside>
+
+<!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cultivo, alerta o parcela...">
+        </div>
+        <div class="top-actions">
+          <button id="btnSimulateAlert" title="Simular alerta">🔔 Simular alerta</button>
+          <div class="avatar">UX</div>
+        </div>
+      </header>
+
+      <main class="main">
+
+        <header class="topbar">
+            <h2>👥 Comunidad agricola</h2>
+        </header>
+
+        <section class="comunidad-section">
+        <!-- Crear publicación -->
+        <div class="card publicar-card">
+          <div class="publicar-header">
+            <div class="author">
+              <div class="avatar-sm">UX</div>
+              <div>
+                <div id="currentUserName" class="author-name">Tú</div>
+                <div id="authorLevel" class="author-level">Semilla</div>
+              </div>
+            </div>
+
+            <div class="visibility">
+              <label for="postVisibility">Visibilidad</label>
+              <select id="postVisibility">
+                <option value="publico">Público</option>
+                <option value="equipo">Equipo</option>
+              </select>
+            </div>
+          </div>
+
+          <textarea id="inputPost" placeholder="Comparte tu experiencia o pregunta..."></textarea>
+
+          <div class="publicar-controls">
+            <input type="file" id="inputImagen" accept="image/*">
+            <div class="publicar-actions">
+              <select id="postCategoria">
+                <option value="general">General</option>
+                <option value="plagas">Plagas</option>
+                <option value="riego">Riego</option>
+                <option value="sostenibilidad">Sostenibilidad</option>
+              </select>
+              <button id="btnPublicar" class="btn-primary">Publicar</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros -->
+        <div class="card filtros-card">
+          <div class="filtros-row">
+            <div class="filtro-grupo">
+              <button class="filtro active" data-filter="todos">Todas</button>
+              <button class="filtro" data-filter="publico">Públicas</button>
+              <button class="filtro" data-filter="equipo">Equipo</button>
+            </div>
+
+            <div class="filtro-search">
+              <input id="feedSearch" placeholder="Buscar por texto o autor...">
+            </div>
+          </div>
+        </div>
+
+        <!-- Feed -->
+        <div id="feed" class="feed"></div>
+
+      </section>
+
+      <footer class="footer">
+        <small>© 2025 UXiembra</small>
+      </footer>
+    </main>
+  </div>
+
+  <script src="assets/scripts/comunidad.js"></script>
+</body>
+</html>

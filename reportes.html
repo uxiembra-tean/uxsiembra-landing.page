@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reportes</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/reportes.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/Logo.PNG" class="brand-logo">
+            <span>UXSiembra</span>
+        </div>
+
+        <nav class="menu">
+            <a href="menu.html">Inicio</a>
+            <a href="alerta.html">Alertas</a>
+            <a href="riego.html">Riego</a>
+            <a class="active" href="reportes.html">Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="ajustes.html">Ajustes</a>
+        </nav>
+        <div class="help-card">
+        <h4>Centro de ayuda</h4>
+        <p>¿Problemas con la app? Contáctanos.</p>
+        <button id="helpBtn">Ir al Centro</button>
+      </div>
+    </aside>
+
+      <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cultivo, alerta o parcela...">
+        </div>
+        <div class="top-actions">
+          <button id="btnSimulateAlert" title="Simular alerta">🔔 Simular alerta</button>
+          <div class="avatar">UX</div>
+        </div>
+      </header>
+      
+    <!-- MAIN -->
+    <main class="main">
+
+        <header class="topbar">
+            <h2>📊 Reportes y Métricas</h2>
+        </header>
+
+        <section class="report-section">
+
+            <!-- ============================= -->
+            <!-- MONITOREO DE AGUA (US-02.1) -->
+            <!-- ============================= -->
+            <div class="card">
+                <h3>Consumo de agua</h3>
+
+                <div class="filtros">
+                    <button data-rango="dia" class="filtro-btn active">Diario</button>
+                    <button data-rango="semana" class="filtro-btn">Semanal</button>
+                    <button data-rango="mes" class="filtro-btn">Mensual</button>
+                </div>
+
+                <canvas id="aguaChart"></canvas>
+
+                <p class="alerta-consumo" id="alertaConsumo"></p>
+            </div>
+
+            <!-- ============================= -->
+            <!-- PRODUCTIVIDAD (US-02.3) -->
+            <!-- ============================= -->
+            <div class="card">
+                <h3>Métricas productivas</h3>
+
+                <div class="metricas">
+                    <div class="metrica">
+                        <span class="titulo">Rendimiento:</span>
+                        <span id="rendimiento" class="valor">–</span>
+                    </div>
+                    <div class="metrica">
+                        <span class="titulo">Costos:</span>
+                        <span id="costos" class="valor">–</span>
+                    </div>
+                    <div class="metrica">
+                        <span class="titulo">Ganancia estimada:</span>
+                        <span id="ganancia" class="valor">–</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ============================= -->
+             <!-- TRAZABILIDAD DE LOTES (US-TRZ) -->
+              <!-- ============================= -->
+               <div class="card">
+                <h3>📦 Trazabilidad de lotes</h3>
+                <!-- Formulario -->
+                 <div class="traza-form">
+                    <input type="text" id="trzLote" placeholder="Nombre del lote (Ej: Lote 3)" class="input-trz">
+                    <input type="date" id="trzFecha" class="input-trz">
+                    <input type="text" id="trzTratamiento" placeholder="Tratamientos aplicados" class="input-trz">
+                    <button id="btnGuardarTrazabilidad" class="btn-primary">Registrar</button>
+                </div>
+            <!-- Tabla -->
+             <table class="trz-table">
+                <thead>
+                    <tr>
+                        <th>Lote</th>
+                        <th>Fecha de siembra</th>
+                        <th>Tratamientos</th>
+                    </tr>
+                </thead>
+                <tbody id="trzTablaBody"></tbody>
+            </table>
+            <button id="btnExportTrazabilidad" class="btn-secondary">Exportar reporte</button>
+        </div>
+
+
+            
+            <!-- ============================= -->
+            <!-- COMPARACIÓN DE CAMPAÑAS -->
+            <!-- ============================= -->
+            <div class="card">
+                <h3>Comparación de campañas</h3>
+
+                <select id="campana1" class="select-campana"></select>
+                <select id="campana2" class="select-campana"></select>
+
+                <button id="btnComparar" class="btn-secondary">Comparar</button>
+
+                <ul id="resultadoComparacion"></ul>
+            </div>
+
+            <!-- ============================= -->
+            <!-- PROYECCIONES + EXPORTACIÓN -->
+            <!-- ============================= -->
+            <div class="card">
+                <h3>Proyección de rendimiento</h3>
+
+                <canvas id="proyeccionChart"></canvas>
+
+                <div class="export-buttons">
+                    <button id="btnExportPDF" class="btn-primary">Exportar PDF</button>
+                    <button id="btnExportExcel" class="btn-secondary">Exportar Excel</button>
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <small>© 2025 UXiembra</small>
+        </footer>
+    </main>
+</div>
+
+<script src="assets/scripts/reportes.js"></script>
+</body>
+</html>

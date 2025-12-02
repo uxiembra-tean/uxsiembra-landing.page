@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riego Inteligente</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/riego.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="brand">
+            <img src="assets/images/Logo.PNG" class="brand-logo">
+            <span>UXSiembra</span>
+        </div>
+
+        <nav class="menu">
+            <a href="menu.html">Inicio</a>
+            <a href="alerta.html">Alertas</a>
+            <a class="active" href="riego.html">Riego</a>
+            <a href="reportes.html">Reportes</a>
+            <a href="usuarios.html">Usuarios</a>
+            <a href="comunidad.html">Comunidad</a>
+            <a href="ajustes.html">Ajustes</a>
+        </nav>
+        <div class="help-card">
+        <h4>Centro de ayuda</h4>
+        <p>¿Problemas con la app? Contáctanos.</p>
+        <button id="helpBtn">Ir al Centro</button>
+      </div>
+    </aside>
+
+       <!-- MAIN -->
+    <main class="main">
+      <!-- HEADER -->
+      <header class="topbar">
+        <div class="search">
+          <input id="searchInput" placeholder="Buscar cultivo, alerta o parcela...">
+        </div>
+        <div class="top-actions">
+          <button id="btnSimulateAlert" title="Simular alerta">🔔 Simular alerta</button>
+          <div class="avatar">UX</div>
+        </div>
+      </header>
+
+      
+    <main class="main">
+
+        <header class="topbar">
+            <h2>💧 Gestión de Riego</h2>
+        </header>
+
+        <section class="riego-section">
+
+            <!-- RECOMENDACIÓN DE RIEGO -->
+            <div class="card riego-card">
+                <h3>Guía inteligente de riego</h3>
+                <p><strong>Recomendación de hoy:</strong> <span id="riegoRecomendado">–</span></p>
+
+                <button id="btnAplicarRiego" class="btn-primary">Aplicado</button>
+            </div>
+
+            <!-- ALERTA CLIMÁTICA -->
+            <div class="card clima-card">
+                <h3>Condición Climática Actual</h3>
+
+                <div class="clima-content">
+                    <div id="climaEmoji" class="clima-icono">–</div>
+                    <div>
+                        <p><strong>Evento:</strong> <span id="climaEvento">–</span></p>
+                        <p><strong>Tiempo restante:</strong> <span id="climaTiempo">–</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CONSUMO DE AGUA (GRÁFICO) -->
+            <div class="card grafico-card">
+                <h3>Consumo de agua (Últimos 7 días)</h3>
+                <canvas id="consumoChart"></canvas>
+            </div>
+
+            <!-- GUIA PRACTICA -->
+            <div class="card guia-card">
+                <h3>Guía práctica de riego</h3>
+
+                <ol id="guiaPasos">
+                    <!-- Rellenado dinámico -->
+                </ol>
+
+                <button id="btnCompletarGuia" class="btn-secondary">Completado</button>
+            </div>
+
+            <!-- HISTORIAL -->
+            <div class="card historial-card">
+                <h3>Historial de riego</h3>
+                <ul id="historialRiego"></ul>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+            <small>© 2025 UXiembra</small>
+        </footer>
+
+    </main>
+</div>
+
+<script src="assets/scripts/riego.js"></script>
+
+</body>
+</html>
